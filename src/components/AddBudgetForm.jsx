@@ -38,7 +38,7 @@ const AddBudgetForm = () => {
             step="0.01"
             name="newBudgetAmount"
             id="newBudgetAmount"
-            placeholder="$10"
+            placeholder="e.g., $10"
             required
             inputMode="decimal"
           />
@@ -46,10 +46,10 @@ const AddBudgetForm = () => {
         <input type="hidden" name="_action" value="createBudget" />
         <button type="submit" className="btn btn--dark" disabled={isSubmitting}>
           {isSubmitting ? (
-            <span>Submitting</span>
+            <span>Submitting...</span>
           ) : (
             <>
-              <span>Create Budget</span>
+              <span>Add Expense</span>
               <CurrencyDollarIcon width={20}></CurrencyDollarIcon>
             </>
           )}
