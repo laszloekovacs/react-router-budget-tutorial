@@ -2,7 +2,7 @@ import React from "react"
 import { useLoaderData } from "react-router-dom"
 import { toast } from "react-toastify"
 import Intro from "../components/Intro"
-import { fetchData, createBudget } from "../helpers"
+import { fetchData, createBudget, waait } from "../helpers"
 import AddBudgetForm from "../components/AddBudgetForm"
 
 // loader
@@ -14,6 +14,7 @@ export function dashBoardLoader() {
 
 //action
 export async function dashboardAction({ request }) {
+  await waait()
   const data = await request.formData()
   const { _action, userName, ...values } = Object.fromEntries(data)
   console.log(_action)
