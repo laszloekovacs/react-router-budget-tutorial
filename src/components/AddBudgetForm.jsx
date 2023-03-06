@@ -22,7 +22,7 @@ const AddBudgetForm = () => {
           <input
             type="number"
             step="0.01"
-            name="newBudgetAmoutn"
+            name="newBudgetAmount"
             id="newBudgetAmount"
             placeholder="$10"
             required
