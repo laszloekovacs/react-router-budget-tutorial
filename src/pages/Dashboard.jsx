@@ -7,6 +7,7 @@ import AddBudgetForm from "../components/AddBudgetForm"
 import AddExpenseForm from "../components/AddExpenseForm"
 import BudgetItem from "../components/BudgetItem"
 import Table from "../components/Table"
+
 // loader
 export function dashBoardLoader() {
   const userName = fetchData("userName")
@@ -81,7 +82,7 @@ const Dashboard = () => {
                 </div>
                 {
                   expenses && expenses.length > 0 && (
-                    <div className="grid-md">
+                    <div className="grid-lg">
                       <h2>Recent Expenses</h2>
                       <Table expenses={expenses.sort((a,b) => b.createdAt - a.createdAt)} />
                     </div>

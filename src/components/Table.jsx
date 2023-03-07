@@ -3,7 +3,7 @@ import ExpenseItem from './ExpenseItem'
 
 const Table = ({expenses}) => {
   return (
-    <div className="table">
+    <table className="table">
         <thead>
             <tr>
                 {
@@ -20,7 +20,7 @@ const Table = ({expenses}) => {
                 </tr>
             ))}
         </tbody>
-    </div>
+    </table>
     
   )
 }
