@@ -6,6 +6,7 @@ import Error from "./pages/Error"
 
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/dist/ReactToastify.css"
+import ExpensesPage, { expensesLoader } from "./pages/ExpensesPage"
 
 // Routes
 const router = createBrowserRouter([
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
         loader: dashBoardLoader,
         action: dashboardAction,
         errorElement: <Error />,
+      },
+      {
+        path: "expenses",
+        element: <ExpensesPage />,
+        loader: expensesLoader
       },
       {
         path: "logout",

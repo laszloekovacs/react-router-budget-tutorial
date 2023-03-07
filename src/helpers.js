@@ -11,11 +11,6 @@ export const fetchData = (key) => {
   return JSON.parse(localStorage.getItem(key))
 }
 
-export const deleteItem = ({ key }) => {
-  return localStorage.clear()
-  //return localStorage.removeItem(key)
-}
-
 //create budget
 export const createBudget = ({ name, amount }) => {
   const newItem = {
@@ -83,4 +78,22 @@ export const formatPercentage = (amt) => {
 
 export const formatDateToLocaleString = (epoch) => {
   return new Date(epoch).toLocaleDateString()
+}
+
+//get all items from local storage
+export const getAllMatchingItems = ({
+  category, key, value
+}) => {
+  const data = fetchData(category) ?? []
+  return data.filter(item => item[key] === value)
+}
+
+//delete item from storage
+export const deleteItem =({key, id}) => {
+  const existingData = fetchData(key)
+  if(id) {
+    const newData = existingData.filter((item)=> item.id !== id)
+    return localStorage.setItem(key, JSON.stringify(newData))
+  }
+  return localStorage.removeItem(key)
 }
