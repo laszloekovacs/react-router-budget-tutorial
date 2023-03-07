@@ -22,7 +22,7 @@ const BudgetItem = ({budget}) => {
                 {formatCurrency(spent)} spent
             </small>
             <small>
-                {formatCurrency(amount-spent)}remaining
+                {formatCurrency(amount-spent)} remaining
             </small>
         </div>
     </div>
